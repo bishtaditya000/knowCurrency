@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="icon" href="https://png.pngitem.com/pimgs/s/111-1111143_free-icon-packs-vector-icons-vector-free-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="util.css">
+    <style>
+        /* Base styles and background setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000; /* Fallback for background */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Neon-like vibrant background effect using pseudo-elements */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+background-color: #F5F5F7;
+            filter: blur(80px) brightness(1.2); /* Apply heavy blur for the glow effect */
+            z-index: -1;
+            animation: backgroundShift 20s infinite alternate; /* Optional: subtle movement */
+        }
+
+        @keyframes backgroundShift {
+            from { transform: scale(1.1) rotate(0deg); }
+            to { transform: scale(1.0) rotate(5deg); }
+        }
+
+        /* --- Login Container (The Frosted Glass Div) --- */
+        .login-container {
+            position: fixed;
+            top:20%;
+            background: rgba(255, 255, 255, 0.05); /* Very light, transparent white */
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 350px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Stronger shadow for depth */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle light border */
+            /* The key for the frosted glass effect */
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            color: #fff;
+            text-align: center;
+        }
+
+        /* --- Header/Title --- */
+        .login-container h2 {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;;
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* --- Form Group Styling --- */
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: rgba(0, 0, 0, 0.7); /* Lighter label color */
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        /* --- Input Field Styling --- */
+        .input-wrapper input {
+            width: 100%;
+            padding: 10px 0 5px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.5); /* Lighter line */
+            color: #000000;
+            font-size: 1em;
+            outline: none;
+            transition: border-bottom-color 0.3s;
+        }
+
+        .input-wrapper input:focus {
+            border-bottom-color: #357DE5; /* White line on focus */
+        }
+
+        /* Placeholder color adjustment */
+        .input-wrapper input::placeholder {
+            color: #000000;
+        }
+
+        /* Icon placement */
+        .input-icon {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(0, 0, 0);
+            font-size: 1.2em;
+        }
+
+        /* --- Flex Row for 'Remember Me' and 'Forgot Password' --- */
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .remember-me input[type="checkbox"] {
+            /* Basic checkbox styling to match the theme */
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 1px solid black;
+            border-radius: 3px;
+            margin-right: 8px;
+            background-color: transparent;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .remember-me input[type="checkbox"]:checked::after {
+            /* Simple checkmark */
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #357DE5;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .options-row a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .options-row a:hover {
+            color: #DC703F;
+        }
+
+        /* --- Login Button --- */
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background-image: linear-gradient(to left #357DE5 90deg #DC703F); /* Solid white background */
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            color: #000;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            box-shadow: 0 0 15px #00000064;
+        }
+
+        .login-button:hover {
+            color: white;
+            background: #357DE5;
+            transform: translateY(-2px);
+        }
+        
+        /* --- Register Link --- */
+        .register-link {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .register-link a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        
+
+        /* Font Awesome for Icons (using a simple text substitute if FA isn't available) */
+        /* For production, link Font Awesome library: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> */
+    </style>
+</head>
+<body style="background-color: #ffffff;">
+      <div class="header">
+        <img class="logo" src="https://png.pngitem.com/pimgs/s/111-1111143_free-icon-packs-vector-icons-vector-free-icon.png" style="width: 20px;">
+        <div class="menu1">
+        <a href="home.html">Home</a>
+        <a href="convertor.html">Convertor</a>
+        <a href="premium.html">Premium</a>
+        <a href="about.html">About</a>
+            <i class="fas fa-search"></i>
+           <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="email" style="position: absolute; left: -9999px;">Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <span class="input-icon">✉️</span> 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" style="position: absolute; left: -9999px;">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="input-icon">🔒</span>
+                </div>
+            </div>
+
+            <div class="options-row">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember" style="color: #000;">Remember me</label>
+                </div>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <div class="register-link" style="color: #000;">
+            Don't have an account? <a href="#">Register</a>
+        </div>
+    </div>
+    <div style="height: 30vh; text-align: center; padding-top: 50px; position: fixed; top:85%; ">
+            <p style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;font-size: 20px;
+            color: transparent;">&copy; 2025 Currency Knowledge Hub. All rights reserved.</p>
+        </div>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+     const firebaseConfig = {
+    apiKey: "AIzaSyASxp5qVVHM9uRoyKJciIA16i_4poz5dMo",
+    authDomain: "knowcurrency-fe710.firebaseapp.com",
+    projectId: "knowcurrency-fe710",
+    storageBucket: "knowcurrency-fe710.firebasestorage.app",
+    messagingSenderId: "263195596978",
+    appId: "1:263195596978:web:7d40817b3e419cd69411ab",
+    measurementId: "G-F97SP10JLF"
+  };
+
+     const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+    function handleRegister(email, password) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+         
+                const user = userCredential.user;
+                alert('Registration Successful! User: ' + user.email);
+            
+            })
+            .catch((error) => {
+             
+                alert('Registration Failed: ' + error.message);
+                console.error(error);
+            });
+    }
+
+  
+    function handleLogin(email, password) {
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                
+                const user = userCredential.user;
+                alert('Login Successful! Welcome: ' + user.email);
+     
+            })
+            .catch((error) => {
+                
+                alert('Login Failed: ' + error.message);
+                console.error(error);
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginForm = document.querySelector('.login-container form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const registerLink = document.querySelector('.register-link a');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            handleLogin(email, password);
+        });
+
+ 
+        registerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const email = prompt("Enter email for registration:");
+            const password = prompt("Enter password for registration:");
+            if (email && password) {
+                handleRegister(email, password);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

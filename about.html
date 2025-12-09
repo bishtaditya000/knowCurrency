@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Currency Knowledge Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="util.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+      <div class="header">
+        <img class="logo" src="https://png.pngitem.com/pimgs/s/111-1111143_free-icon-packs-vector-icons-vector-free-icon.png">
+        <div class="menu1">
+        <a href="home.html">Home</a>
+        <a href="convertor.html">Convertor</a>
+        <a href="premium.html">Premium</a>
+        <a href="about.html">About</a>
+            <i class="fas fa-search"></i>
+           <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+    <style>
+    
+        :root {
+            --color-primary: #357DE5; /* Blue */
+            --color-accent: #f7f7f7;  /* Orange/Terracotta */
+            --color-dark: #f5f5f7;
+            --color-light: #f5f5f7;
+            --color-secondary-dark: #2a2a2a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.7;
+            min-height: 300vh; /* Ensures scroll space for animation demo */
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+           background-color: transparent;
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 40px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .content-section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background-color: var(--color-secondary-dark);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .mission-points {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .mission-card {
+            flex: 1;
+            padding: 25px;
+            background-color: var(--color-dark);
+            border-radius: 20px;
+            border-top: 4px solid ;
+            border-color: #fff;
+        }
+
+        .mission-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        /* Value Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .value-item {
+            padding: 20px;
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            background-color: #333;
+        }
+
+        .value-item h4 {
+            color: var(--color-accent);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        
+        .slide-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .slide-left.show, .slide-right.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Transition Delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img style="left: 0;position: absolute; top:50px" src="Screenshot 2025-12-05 200532.png">
+        <h1 style="font-family: 'Inter', sans-serif;
+        font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+             position: absolute; top:20%; left:25%;z-index: 2;">Behind the KnowCurrency</h1>
+        <p style="color: gray; position: absolute; top:35%; left: 35%;">Your guide to financial clarity and global exchange.</p>
+    </header>
+
+    <main>
+        <section style="background-color: white; margin-top: 20%;" class="content-section reveal-up">
+            <h2 style="color: black;" class="section-title">Our Vision</h2>
+            <p style="color: gray;">We started KnowCurrency with a simple idea: that complex financial data, especially regarding global currencies, should be accessible and understandable to everyone. Whether you are a seasoned investor, a small business owner dealing with international trade, or a traveler planning a trip, clarity on currency markets is paramount.</p>
+            <p style="margin-top: 15px; color: gray;">Our team of financial analysts and tech innovators work tirelessly to aggregate real-time data, create easy-to-use tools, and provide educational content that demystifies foreign exchange (forex) and monetary policy. We empower you to make informed decisions confidently.</p>
+        </section>
+
+        <section style="background-color: white; box-shadow: 0px 10px 25px 0 #DC703F" class="content-section">
+            <h2 class="section-title reveal-up delay-1" style="color: black;">What Drives Us</h2>
+            <div class="mission-points">
+                <div class="mission-card slide-left delay-2">
+                    <h3 style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;">Empowerment</h3>
+                    <p style="color: black;">Turning complicated exchange rates and economic indicators into actionable knowledge for the everyday user.</p>
+                </div>
+                <div class="mission-card reveal-up delay-3">
+                    <h3 style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;">Accuracy</h3>
+                    <p style="color: black;">Commitment to providing precise, real-time currency data sourced from reliable global financial institutions.</p>
+                </div>
+                <div class="mission-card slide-right delay-2">
+                    <h3 style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;">Simplicity</h3>
+                    <p style="color: black;">Designing tools and content that are intuitive, clean, and free from unnecessary jargon or clutter.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section reveal-up delay-1" style="background-color: white;box-shadow: 0px 10px 25px 0 #357DE5;" 
+            >
+            <h2 class="section-title" style="color: black;">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item slide-left delay-2" style="background-color: #f5f5f7;">
+                    <h4 style="color: black;">Transparency</h4>
+                    <p style="color: black;">We are open about our data sources and methodology, ensuring you can trust the information provided.</p>
+                </div>
+                <div class="value-item reveal-up delay-3"style="background-color: #f5f5f5;">
+                    <h4 style="color: black;">Innovation</h4>
+                    <p style="color: black;">Continuously seeking new ways to present currency data, from interactive charts to predictive models.</p>
+                </div>
+                <div class="value-item slide-right delay-2"style="background-color: #f5f5f5;">
+                    <h4 style="color: black;">Integrity</h4>
+                    <p style="color: black;">Upholding the highest ethical standards in all financial reporting and educational content we create.</p>
+                </div>
+            </div>
+        </section>
+        <div class="follow">
+            <h1 style="color: black; justify-self: center; margin-bottom: 40px;">Follow Us!</h1>
+            <div class="button-container">
+  
+  <div class="glass-btn blue-btn">
+    <!--<div class="content">
+      h
+    </div> -->
+    <img src="https://i.postimg.cc/DwbWDQTx/facebook.png" alt="facebook" style="width: 5.5em;">
+  </div>
+
+  <div class="glass-btn red-btn">
+    <!-- <div class="content">
+      e
+    </div> -->
+    <img src="https://i.postimg.cc/LstJ4Hhf/youtube.png" alt="youtube" style="width: 6em;">
+  </div>
+  
+  <div class="glass-btn amber-btn">
+    <!-- <div class="content">
+      y
+    </div> -->
+    <img src="https://i.postimg.cc/tgQ1H1Rp/soundcloud.png" alt="soundcloud" style="width: 6em;">
+  </div>
+
+</div>
+        </div>
+        <style>
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.glass-btn {
+  width: 100px;
+  height: 100px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  margin-left: 1em;
+  margin-right: 1em;  
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.blue-btn {
+    -webkit-box-shadow: 0px 20px 20px -17px rgba(0, 111, 255, 0.53);
+    -moz-box-shadow: 0px 20px 20px -17px rgba(0, 111, 255, 0.53);
+    box-shadow: 0px 20px 20px -17px rgba(0, 111, 255, 0.53);
+
+    &:hover {
+      -webkit-box-shadow: 0px 20px 35px -16px rgba(0, 111, 255, 0.65);
+      -moz-box-shadow: 0px 20px 35px -16px rgba(0, 111, 255, 0.65);
+      box-shadow: 0px 20px 35px -16px rgba(0, 111, 255, 0.65);      
+    }
+
+    .content {
+      font-size: 4em;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(to right, #006fff, #00acff 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 10px 37px rgba(0, 111, 255, 0.8);
+    }
+  }
+
+  &.red-btn {
+    -webkit-box-shadow: 0px 20px 20px -17px rgba(255, 16, 39, 0.5);
+    -moz-box-shadow: 0px 20px 20px -17px rgba(255, 16, 39, 0.5);
+    box-shadow: 0px 20px 20px -17px rgba(255, 16, 39, 0.5);
+
+    &:hover {
+      -webkit-box-shadow: 0px 20px 35px -16px rgba(255, 16, 39, 0.57);
+      -moz-box-shadow: 0px 20px 35px -16px rgba(255, 16, 39, 0.57);
+      box-shadow: 0px 20px 35px -16px rgba(255, 16, 39, 0.57);      
+    }
+
+    .content {
+      font-size: 4em;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(to right, #ff1027, #ff4f06 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 10px 37px rgba(255, 16, 39, 0.6);
+    }
+  }
+
+  &.amber-btn {
+    -webkit-box-shadow: 0px 20px 20px -17px rgba(255, 159, 16, 0.53);
+    -moz-box-shadow: 0px 20px 20px -17px rgba(255, 159, 16, 0.53);
+    box-shadow: 0px 20px 20px -17px rgba(255, 159, 16, 0.53);
+
+    &:hover {
+      -webkit-box-shadow: 0px 20px 35px -16px rgba(255, 159, 16, 0.6);
+      -moz-box-shadow: 0px 20px 35px -16px rgba(255, 159, 16, 0.6);
+      box-shadow: 0px 20px 35px -16px rgba(255, 159, 16, 0.6);      
+    }
+
+    .content {
+      font-size: 4em;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(to right, #ff8d00, #f7ad07 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 10px 37px rgba(255, 94, 16, 0.7);
+    }
+  }
+
+  &:hover {
+    background-color: darken(#fafafa, 2%);    
+    transform: translateY(-5px);
+    transition: all 0.3s;
+  }
+}
+</style>
+
+        <div style="height: 30vh; text-align: center; padding-top: 50px; ">
+            <p style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;font-size: 20px;
+            color: transparent;">&copy; 2025 Currency Knowledge Hub. All rights reserved.</p>
+        </div>
+    </main>
+
+    <script>
+        /*
+        ========================================
+        JAVASCRIPT (Intersection Observer for Scroll Animation)
+        ========================================
+        */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements that need animation
+            const animatedElements = document.querySelectorAll('.reveal-up, .slide-left, .slide-right');
+
+            // Options: Triggers when the element is 15% visible
+            const options = {
+                threshold: 0.15, 
+                rootMargin: "0px"
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'show' class to trigger the CSS transition
+                        entry.target.classList.add('show');
+                        
+                        // Stop observing once the animation has been triggered (one-time animation)
+                        observer.unobserve(entry.target);
+                    }
+                    /* If you wanted a continuous animation (in and out), you would uncomment the else block:
+                    else {
+                        entry.target.classList.remove('show');
+                    }
+                    */
+                });
+            }, options);
+
+            // Tell the observer which elements to watch
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</body>
+</html>

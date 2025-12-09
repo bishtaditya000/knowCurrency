@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="util.css">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use 'Inter' font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1f2937', // Dark gray
+                        'secondary-light': '#f3f4f6', // Light gray
+                        'accent': '#10b981', // Emerald green
+                        'text-light': '#e5e7eb', // Off-white text
+                    }
+                }
+            }
+        }
+    </script>
+    <div class="header">
+        <img class="logo" src="https://png.pngitem.com/pimgs/s/111-1111143_free-icon-packs-vector-icons-vector-free-icon.png">
+        <div class="menu1">
+        <a href="home.html">Home</a>
+        <a href="convertor.html">Convertor</a>
+        <a href="premium.html">Premium</a>
+        <a href="about.html">About</a>
+            <i class="fas fa-search"></i>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+    <style>
+        /* Apply smooth transitions to all elements */
+        * {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 font-sans" style="background-color: white;">
+  <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  
+    <div id="converter-card" class="w-full max-w-xl bg-white dark:bg-primary-dark shadow-2xl rounded-xl p-8 space-y-6" style="margin-top: 5%; box-shadow: 10px 10px 10px 10px rgb(104, 102, 102);">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-text-light text-center" style="font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);-webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; 
+            font-size: 30px; ">
+            Global Currency Converter
+        </h1>
+
+        
+        <div>
+            <label for="amount" class="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">Amount to Convert</label>
+            <input type="number" id="amount" value="100" min="0.01" step="0.01"
+                   class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-accent focus:border-accent dark:bg-gray-800 dark:text-text-light text-xl font-semibold"
+                   placeholder="Enter amount">
+        </div>
+
+        
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+            
+            
+            <div class="w-full md:w-5/12">
+                <label for="from-currency" class="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">From Currency</label>
+                <select id="from-currency" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-accent focus:border-accent dark:bg-gray-800 dark:text-text-light text-lg">
+                   
+                </select>
+            </div>
+
+          
+            <button id="swap-button" class="p-3 mt-8 md:mt-0 md:w-2/12 text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent focus:outline-none transition transform hover:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                </svg>
+            </button>
+
+            
+            <div class="w-full md:w-5/12">
+                <label for="to-currency" class="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">To Currency</label>
+                <select id="to-currency" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-accent focus:border-accent dark:bg-gray-800 dark:text-text-light text-lg">
+                   
+                </select>
+            </div>
+        </div>
+
+        <!-- Convert Button -->
+        <button id="convert-button"
+                class="w-full py-3 bg-accent text-white font-bold text-lg rounded-lg shadow-lg hover:bg-emerald-600 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-accent focus:ring-opacity-50]"
+                style="background-color: #000000;">
+            Convert
+        </button>
+
+        <!-- Result Display -->
+        <div id="result-container" class="bg-secondary-light dark:bg-gray-800 p-4 rounded-xl text-center min-h-[6rem] flex flex-col justify-center">
+            <p id="rate-display" class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                Exchange Rate: -
+            </p>
+            <p id="result-display" class="text-3xl font-extrabold text-gray-900 dark:text-accent">
+                0.00
+            </p>
+        </div>
+
+        <!-- Loading Indicator / Error Message -->
+        <div id="status-message" class="text-center text-sm font-medium h-6"></div>
+
+        <p class="text-xs text-center text-gray-400 dark:text-gray-600 pt-4 border-t border-gray-200 dark:border-gray-700">
+            Rates are sourced using public financial APIs.
+        </p>
+    </div>
+
+    <script>
+        // --- Configuration and State ---
+        const currencies = {
+            "USD": "United States Dollar",
+            "EUR": "Euro",
+            "GBP": "British Pound Sterling",
+            "JPY": "Japanese Yen",
+            "CAD": "Canadian Dollar",
+            "AUD": "Australian Dollar",
+            "CHF": "Swiss Franc",
+            "CNY": "Chinese Yuan",
+            "INR": "Indian Rupee",
+            "PKR": "Pakistani Rupee",
+            "BRL": "Brazilian Real",
+            "ZAR": "South African Rand",
+            "KRW": "South Korean Won",
+            "MXN": "Mexican Peso",
+            "SEK": "Swedish Krona",
+            "HKD": "Hong Kong Dollar"
+        };
+
+        const elements = {
+            amountInput: document.getElementById('amount'),
+            fromSelect: document.getElementById('from-currency'),
+            toSelect: document.getElementById('to-currency'),
+            swapButton: document.getElementById('swap-button'),
+            convertButton: document.getElementById('convert-button'),
+            resultDisplay: document.getElementById('result-display'),
+            rateDisplay: document.getElementById('rate-display'),
+            statusMessage: document.getElementById('status-message')
+        };
+
+        let isConverting = false;
+
+        // --- Utility Functions ---
+        function populateCurrencies() {
+            const fragment = document.createDocumentFragment();
+            for (const [code, name] of Object.entries(currencies)) {
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = `${code} - ${name}`;
+                fragment.appendChild(option);
+            }
+
+            elements.fromSelect.appendChild(fragment.cloneNode(true));
+            elements.toSelect.appendChild(fragment);
+
+            // Set initial selection
+            elements.fromSelect.value = "USD";
+            elements.toSelect.value = "EUR";
+        }
+
+        /**
+         * Fetches the exchange rate using exchangerate.host convert endpoint.
+         * Returns the rate for 1 unit of fromCurrency in toCurrency.
+         * Example response structure includes "result" which is the converted amount for the requested amount (we request amount=1).
+         */
+   async function fetchExchangeRate(fromCurrency, toCurrency) {
+    const url = `https://open.er-api.com/v6/latest/${fromCurrency}`;
+
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (data.result !== "success") {
+        throw new Error("API returned error: " + data["error-type"]);
+    }
+
+    const rate = data.rates[toCurrency];
+    if (!rate) {
+        throw new Error("Currency not supported by API.");
+    }
+
+    return rate;
+}
+
+
+        // --- Main Logic ---
+        async function convertCurrency() {
+            if (isConverting) return;
+
+            const amount = parseFloat(elements.amountInput.value);
+            const fromCurrency = elements.fromSelect.value;
+            const toCurrency = elements.toSelect.value;
+
+            // Simple validation
+            if (isNaN(amount) || amount <= 0) {
+                elements.statusMessage.textContent = "Please enter a valid amount.";
+                elements.statusMessage.className = "text-center text-sm font-medium text-red-500 h-6";
+                return;
+            }
+            if (fromCurrency === toCurrency) {
+                elements.resultDisplay.textContent = amount.toFixed(2);
+                elements.rateDisplay.textContent = "Exchange Rate: 1.000000";
+                elements.statusMessage.textContent = "Currencies are the same (Rate: 1.0)";
+                elements.statusMessage.className = "text-center text-sm font-medium text-gray-500 dark:text-gray-400 h-6";
+                return;
+            }
+
+            // UI feedback for starting conversion
+            isConverting = true;
+            elements.convertButton.disabled = true;
+            elements.convertButton.textContent = "Converting...";
+            elements.statusMessage.textContent = "Fetching latest rates...";
+            elements.statusMessage.className = "text-center text-sm font-medium text-accent h-6";
+            elements.resultDisplay.textContent = "---";
+            elements.rateDisplay.textContent = "Exchange Rate: ---";
+
+            try {
+                // 1. Fetch the rate (rate for 1 unit)
+                const rate = await fetchExchangeRate(fromCurrency, toCurrency);
+
+                // 2. Calculate the result
+                const convertedAmount = amount * rate;
+
+                // 3. Update the UI
+                elements.resultDisplay.textContent = convertedAmount.toFixed(2);
+                elements.rateDisplay.textContent = `Exchange Rate: ${rate.toFixed(6)}`;
+                elements.statusMessage.textContent = `Successfully converted ${fromCurrency} to ${toCurrency}.`;
+                elements.statusMessage.className = "text-center text-sm font-medium text-green-600 dark:text-green-400 h-6";
+
+            } catch (error) {
+                console.error("Conversion Error:", error);
+
+                // Provide a clearer, more actionable error message to the user
+                let userMessage = "Error: Conversion failed. Check your network connection or try again.";
+                const msg = (error && error.message) ? error.message : "";
+
+                if (msg.includes('API request failed: 400')) {
+                    userMessage = "Error: Invalid request to the API. Check currency codes.";
+                } else if (msg.includes('API request failed: 429')) {
+                    userMessage = "Error: Too many requests. Please wait a moment and try again.";
+                } else if (msg.includes('Invalid rate response')) {
+                    userMessage = "Error: Could not retrieve rate for that currency pair. Try different currencies.";
+                } else if (msg.includes('API error')) {
+                    userMessage = "Error: Exchange API reported an error. Try again later.";
+                }
+
+                elements.statusMessage.textContent = userMessage;
+                elements.statusMessage.className = "text-center text-sm font-medium text-red-500 h-6";
+                elements.resultDisplay.textContent = "ERROR";
+                elements.rateDisplay.textContent = "Exchange Rate: Failed";
+            } finally {
+                // UI feedback for ending conversion
+                isConverting = false;
+                elements.convertButton.disabled = false;
+                elements.convertButton.textContent = "Convert";
+            }
+        }
+
+        function swapCurrencies() {
+            const fromValue = elements.fromSelect.value;
+            const toValue = elements.toSelect.value;
+            elements.fromSelect.value = toValue;
+            elements.toSelect.value = fromValue;
+            // Optionally trigger conversion immediately after swap
+            convertCurrency();
+        }
+
+        // --- Event Listeners and Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCurrencies();
+            // Initial conversion attempt on load
+            elements.amountInput.addEventListener('change', convertCurrency);
+            elements.fromSelect.addEventListener('change', convertCurrency);
+            elements.toSelect.addEventListener('change', convertCurrency);
+            elements.convertButton.addEventListener('click', convertCurrency);
+            elements.swapButton.addEventListener('click', swapCurrencies);
+            
+            // Run initial conversion
+            convertCurrency(); 
+        });
+
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>

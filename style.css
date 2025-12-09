@@ -1,0 +1,536 @@
+.header h1{
+    padding-left: 30px;
+    font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.header{
+    background-color: #F5F5F7;
+}
+.logo{
+    width: 50px;
+}
+.header a{
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Inter';
+    font-family: "Lato";
+    text-decoration: none;
+    color: #3b3b3c;
+}
+.menu1 i{
+    cursor: pointer;
+color: #3b3b3c;
+}
+.main{
+    transform: translateY(-85px);
+    height: 500px;
+    width: 100%;
+    position: relative;
+    left: 0%;
+    background-color: #F5F5F7;
+}
+.section-view{
+    position: relative;
+    top:30%;
+    margin: 100px auto;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    height: 200px;
+}
+.section-view::-webkit-scrollbar{
+    display: none;
+}
+.group{
+    padding-top: 70px;
+    display: flex;
+    gap: 3em;
+    animation: spin 15s infinite linear;
+    padding-right: 3em;
+}
+.card{
+    flex: 0 0 5em;
+    width: 3em;
+    height: 2.5em;
+    font-size: 3em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    text-align:center ;
+    align-content: center;
+
+}
+@keyframes spin{
+    from{translate: 0;}
+    to{
+        translate: -100%;
+    }
+}
+.a1{
+background-image: url("https://www.shutterstock.com/image-photo/1-dollar-note-isolated-on-600nw-2555540875.jpg");
+background-size:100% 100%;
+}
+.b{
+background-image: url("https://t3.ftcdn.net/jpg/04/98/97/94/360_F_498979446_xASCqDOzKLw0S1PNJjlqsEcTxUCADNYi.jpg");
+background-size:100% 100%;
+}
+.c{
+background-image: url("https://katzauction.b-cdn.net/imgs/124/124P_KMS14.jpg");
+background-size:100% 100%;
+}
+.d{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OUKLSfKbvpCCCICdunkJDzdd9gEdR_MNqA&s");
+background-size:100% 100%;
+}
+.e{
+background-image: url("https://images-old.investinglive.com/20210415/canadian-100-dollar-bill.png");
+background-size:100% 100%;
+}
+.f{
+background-image: url("https://www.theibns.org/joomla/images/stories/bnoy2018/AUS-50-Front.png");
+background-size:100% 100%;
+}
+.g{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrQ3pIS4C9CWLYxnLF7BJekCOYjctxr3qeQ&s");
+background-size:100% 100%;
+}
+.h{
+background-image: url("https://www.foreigncurrencyandcoin.com/wp-content/uploads/2018/12/products-16038.jpg");
+background-size:100% 100%;
+}
+.i{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLGoxJLwXuQef7p9ff84M9eM5LzSvtRIdN0Q&s");
+background-size:100% 100%;
+}
+.j{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyPPbsjt0vDRsPOPoSIeGuySDc_Q7BOQP8A&s");
+background-size:100% 100%;
+}
+.k{
+background-image: url("https://www.theibns.org/joomla/images/stories/bnoy2020/BRA-200-Front.png");
+background-size:100% 100%;
+}
+.l{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOo1TSPgO4NvDUoq01hRgzM19WIAv-cnLBaA&s");
+background-size:100% 100%;
+}
+.m{
+background-image: url("https://www.leftovercurrency.com/app/uploads/2018/02/5000-south-korean-won-banknote-1977-issue-1.jpg");
+background-size:100% 100%;
+}
+.n{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcdr3rGNBRJgms3TnAylgFGDQasvWc_z3sg&s");
+background-size:100% 100%;
+}
+.o{
+background-image: url("https://www.foreigncurrencyandcoin.com/wp-content/uploads/2018/12/products-17369.jpg");
+background-size:100% 100%;
+}
+.p{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiGAWJTJW482pqIaVFUJ7SxFf75jQNw9U_mA&s");
+background-size:100% 100%;
+}
+.gradientdiv
+{
+  width: 100%;
+  height: 200px;
+  background-image: url('Screenshot\ 2025-12-05\ 200532.png');
+  background-size: cover;
+
+}
+.heading-main{
+    display: flex;
+    position: relative;
+    top:30%;
+    left:10%;
+    width: 100%;
+}
+.h13{
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+}
+.h14{
+    position: relative;
+    padding-left: 8px;
+    transform:translateY(-1px);
+    font-size: 30px;
+    color: rgb(94, 94, 94);
+}
+.main-view1{
+    align-items: center;
+    transform: translateY(-90px);
+}
+.boxes{
+    
+    background-color: white;
+    height: 500px;
+    width: 450px;
+    position: relative;
+    border-radius: 25px; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    transition: 1s  ease-in-out;
+}
+.boxes:hover{
+    transform: scale(1.05);
+    box-shadow: #DC703F 0px 7px 29px 0px;
+    transition: 0.6s  ease-in-out;
+}
+.boxes h1{
+color: black;
+font-size: 30px;
+font-family: "Inter";
+font-weight: 600;
+position: absolute;
+left:5%;
+top:5%;
+}
+.boxes h2{
+color: black;
+font-size: 25px;
+font-family: "Inter";
+font-weight: 500;
+position: absolute;
+left:5%;
+top:13%;
+font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+}
+.box1{
+    top: 2px;
+    position: absolute;
+    left:60px;
+}
+.box2{
+    position: absolute;
+    top:2px;
+    left:120px;
+}
+.box3{position: absolute;
+   left: 180px;
+    top:2px;
+}
+.ranking{
+    width: 100%;
+    display: flex;
+    height: 1000px;
+    margin-top: 200px;
+}
+.ranking h1{
+    font-weight: 600;
+    font-size: 30px;
+    position: relative;
+    font-family: 'Inter';
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+}
+.ranking span{
+    padding-left: 5px;
+    color:rgb(113, 109, 109);
+     font-size: 30px;
+    position: relative;
+    font-family: 'Inter';
+}
+.currency1{
+    top:100px;
+}
+
+
+
+.h55{
+    left:20px;
+    width: 100%;
+    height: 50px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 20px;
+}
+.text-section11 p{
+    width: 100%;
+    height: 200px;
+color: black;
+font-family: "Inter";
+font-size: 15px;
+left:20px;
+}
+.text-section11 span{
+    font-size: 15px;
+    padding-left: 0;
+    font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+}
+.toxt{
+    background-color: transparent;
+    width: 550px;
+    transform: translateX(-200px);
+    opacity: 0; 
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out; 
+}
+
+.toxt.showe{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.curre{
+    position: relative;
+    left:-10%;
+    height: 200px;
+    width: 400px;
+    border-radius: 25px;
+    transition: 1.5s ease-in-out; 
+    opacity: 0;
+    box-shadow: 0px 5px 10px;
+    transform: translateX(200px);
+}
+
+.curre.show{
+    opacity: 1;
+    transform: translateX(0px);
+}
+.bg65{
+    opacity: 0;
+    width:0px;
+    transform: scale(0);
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+.bg65.hello{
+width: 200px;
+opacity: 1;
+transform: scale(1);
+}
+.coins{
+    top: 850%;
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+}
+.h77 h1{
+    position: relative;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            left: 20%;
+}
+.h88{
+    padding-top: 100px;
+    position: relative;
+        font-family: 'Inter', sans-serif;
+        color: black; 
+            font-size: 40px;
+}
+.main-view-22{
+    justify-content: space-around;
+    top:100px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 800px;
+
+}
+.ds{
+    top:20%;
+    position: relative;
+    height: 600px;
+background: rgba(216, 216, 216, 0.23);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 400px;
+    border-radius: 25px;
+    transition: 0.8s  ease-in-out;
+    border-radius: 10px;
+ box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff,
+   0 0 40px #ff00ff;
+ animation: glow 1.5s infinite alternate;
+}
+
+
+@keyframes glow {
+ from {
+   box-shadow: 0 0 5px #DC703F, 0 0 5px #DC703F, 0 0 5px #DC703F,
+     0 0 5px #DC703F;
+ }
+ to {
+   box-shadow: 0 0 15px #5dade2, 0 0 15px #5dade2, 0 0 15px #5dade2,
+     0 0 15px #5dade2;
+ }
+}
+
+
+
+.ds:hover{
+    transform: scale(1.06);
+}
+.free p{
+    position: absolute;
+    top:90px;
+    left:80px;
+    font-family: 'Inter', sans-serif;
+        color: black;
+            font-size: 20px;
+            line-height: 45px;
+            font-weight: 500;
+}
+.pro p{
+    position: absolute;
+    top:90px;
+    left:80px;
+    font-family: 'Inter', sans-serif;
+        color: black;
+            font-size: 20px;
+            line-height: 45px;
+            font-weight: 500;
+}
+.proplus p{
+    position: absolute;
+    top:90px;
+    left:80px;
+    font-family: 'Inter', sans-serif;
+        color: black;
+            font-size: 20px;
+            line-height: 45px;
+            font-weight: 500;
+}
+.main-view-22 button:hover{
+    transform:translateY(-5px);
+    cursor: pointer;
+
+}
+.main-view-22 h1{
+     font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #357DE5, #DC703F);    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;  
+}
+.chat-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px #357DE5;
+        z-index: 1000;
+        transition: background-color 0.7s ease-in-out;  
+    }
+    .chat-window {
+        position: fixed;
+        bottom: 90px;
+        left: 20px;
+        width: 350px;
+        height: 450px;
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px #357DE5;
+        display: flex;
+        flex-direction: column;
+        z-index: 999;
+        
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.3s;
+        
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px); 
+        pointer-events: none;
+    }
+    
+    .chat-header {
+        padding: 10px;
+        background-color: #ffffff;
+        color: white;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .close-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .chat-messages {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: white;
+    }
+    .message {
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        border-radius: 15px;
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+    .user-message {
+        color: white;
+        font-family: sans-serif;
+        font-size: 15px;
+        background-color: #357DE5;
+        margin-left: auto;
+    }
+    .bot-message {
+        background-color: #f1f0f0;
+        width: 90%;
+        margin-right: auto;
+    }
+    .chat-input-container {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+    }
+    #user-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+    #send-button {
+        background-color: #357DE5;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
